@@ -20,17 +20,16 @@ plus.onclick = function() {
   enterArr[i] = display.textContent;
   display.textContent = "";
   i++;
-  console.log(enterArr);
   symbol = 1;
-  console.log(symbol);
+  console.log(enterArr);
 }
 
 minus.onclick = function() {
   enterArr[i] = display.textContent;
   display.textContent = "";
   i++;
-  console.log(enterArr);
   symbol = 0;
+  console.log(enterArr);
 }
 
 enter.onclick = function() {
@@ -41,16 +40,23 @@ enter.onclick = function() {
       sum = sum + parseInt(enterArr[a]);
     }
     sum = sum + numb;
+    //  enterArr.length=0;
+      toString(sum);
   } else {
     for (var a = 0; a < enterArr.length; a++) {
-      sum = parseInt(enterArr[a]) - sum;
+    sum = parseInt(enterArr[a]) - sum;
     }
     sum = sum - numb;
+    //  enterArr.length=0;
+      toString(sum);
   }
+  toString(sum);
+  display.textContent = sum;
+  console.log(enterArr);
+  sum = 0;
+  enterArr.length=0;
+  i=0;
 
-
-toString(sum);
-display.textContent = sum;
 }
 
 clear.onclick = function() {
@@ -58,4 +64,5 @@ clear.onclick = function() {
   display.textContent = "";
   enterArr = [];
   sum = 0;
+  symbol = 0;
 }
